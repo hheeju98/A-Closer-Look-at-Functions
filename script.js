@@ -204,3 +204,20 @@ console.log(addVAT2(23));
 }
 // console.log(isPrivate);
 console.log(notPrivate);
+
+
+const secureBooking = function () {
+    let passengerCount = 0;
+    return function () {
+        passengerCount++;
+        console.log(`${passengerCount} passengers`);
+    }
+}
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker); // closure확인가능 /  [[]] = 코드로 접근 불가능한 internal property
