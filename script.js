@@ -264,3 +264,13 @@ const boardPassengers = function (n, wait) {
 
 const perGroup = 1000;  // closure > scope chain
 boardPassengers(180, 3);
+
+
+(function () {
+    const header = document.querySelector('h1');
+    header.style.color = 'red'; // gone (IIFE)
+
+    document.querySelector('body').addEventListener('click', () => {
+        header.style.color = 'blue';
+    })
+})();
